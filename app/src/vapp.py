@@ -52,7 +52,7 @@ class SeatAdjusterApp(VehicleApp):
     def __init__(self, vehicle_client: Vehicle):
         super().__init__()
         self.Vehicle = vehicle_client
-
+123
     async def on_start(self):
         """Run when the vehicle app starts"""
         # TODO subscribe to Vehicle.Cabin.Seat.Row1.Pos1.Position and provide
@@ -70,6 +70,6 @@ class SeatAdjusterApp(VehicleApp):
         # SET_POSITION_RESPONSE_TOPIC with the result of the action.
         json_struct = json.loads(data_str)
         pos=str(json_struct["position"])
-        await self.Vehicle.Cabin.Seat.Row1.Pos1.Position.set(pos)
+        await self.Vehicle.Cabin.Seat.Row1.Pos1.Position.set(int(pos))
         await self.publish_event(SET_POSITION_RESPONSE_TOPIC,"Postion requested") 
 
