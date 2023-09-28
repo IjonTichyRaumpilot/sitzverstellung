@@ -52,7 +52,7 @@ class SeatAdjusterApp(VehicleApp):
     def __init__(self, vehicle_client: Vehicle):
         super().__init__()
         self.Vehicle = vehicle_client
-123
+
     async def on_start(self):
         """Run when the vehicle app starts"""
         # TODO subscribe to Vehicle.Cabin.Seat.Row1.Pos1.Position and provide
